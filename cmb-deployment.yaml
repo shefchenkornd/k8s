@@ -3,18 +3,19 @@ kind: Deployment
 metadata:
 	name: cbm-deployment
 	labels:
-		app: cbm-application
+		app: cbm
 spec:
+	replicas: 3
 	selector:
 		matchLabels:
-			project: cbm
+			app: cbm
 	template:
 		metadata:
 			labels:
-				project: cbm
+				app: cbm
 		spec:
 			containers:
-				- name: cbm-web
+				- name: cbm
 				  image: golang:1.16.3
 				  ports:
-					- containerPort: 80
+					  - containerPort: 80
