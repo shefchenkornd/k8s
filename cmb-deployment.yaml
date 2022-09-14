@@ -2,20 +2,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
 	name: cbm-deployment
-	labels:
-		app: cbm
 spec:
-	replicas: 3
-	selector:
-		matchLabels:
-			app: cbm
+	replicas: 1
 	template:
 		metadata:
 			labels:
-				app: cbm
-		spec:
-			containers:
-				- name: cbm
-				  image: golang:1.16.3
-				  ports:
-					  - containerPort: 80
+				run: cbm
+	spec:
+		containers:
+			- name: cbm
+			  image: golang:1.16.3
+			  ports:
+				  – containerPort: 8888
