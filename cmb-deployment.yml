@@ -17,4 +17,4 @@ spec:
 				- name: cbm-web
 				  image: golang:1.16.3
 				  ports:
-				  	- containerPort: 80
+					- containerPort: 80
