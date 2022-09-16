@@ -4,6 +4,8 @@ metadata:
   name: cbm-deployment
   labels:
     app: cbm
+    env: development
+    owner: IlyaSh
 spec:
   replicas: 3
   selector:
