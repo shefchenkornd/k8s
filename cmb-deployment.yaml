@@ -1,4 +1,3 @@
-# will create deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        project: cbm  # Service will look for those Pods Labels!!!
+        project: cbm
     spec:
       containers:
       - name: app
@@ -23,7 +22,6 @@ spec:
         - containerPort: 80
 
 ---
-# will create service
 apiVersion: v1
 kind: Service
 metadata:
@@ -33,10 +31,10 @@ metadata:
     owner: IlyaShevchenko
 spec:
   selector:
-    project: cbm  # Selecting PODS with those Labels
+    project: cbm
   ports:
   - name: app-listener
     protocol: TCP
-    port: 80        # Port on LoadBalancer
-    targetPort: 80  # Port on POD
+    port: 80
+    targetPort: 80
   type: LoadBalancer
