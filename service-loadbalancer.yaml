@@ -18,9 +18,16 @@ spec:
     spec:
       containers:
       - name: app
-        image: 1.23.1
+        image: golang:1.16.3
+        tty: true
         ports:
         - containerPort: 80
+      - name: mongo
+        image: mongo:4
+        ports:
+        - containerPort: 27017
+        command: ["/bin/sh"]
+        args: ["-c", "mongod --replSet=rs0"]
 
 ---
 # will create service
