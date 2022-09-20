@@ -3,8 +3,7 @@ kind: Deployment
 metadata:
   name: cbm-deploy
   labels:
-    app: my-k8s-deployment
-    enviroment: prod
+    app: my-k8s-deployments
 spec:
   replicas: 3
   selector:
