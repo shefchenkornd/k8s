@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cbm-deployment
+  name: cbm-deploy
   labels:
     app: my-k8s-deployment
     enviroment: prod
@@ -25,7 +25,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: cbm-service
+  name: cbm-svc
   labels:
     env: prod
     owner: IlyaShevchenko
