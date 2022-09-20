@@ -17,9 +17,9 @@ spec:
     spec:
       containers:
       - name: app
-        image: nginx:latest
+        image: tomcat:8.5.38
         ports:
-        - containerPort: 80
+        - containerPort: 8080
 
 ---
 apiVersion: v1
@@ -30,11 +30,11 @@ metadata:
     env: prod
     owner: IlyaShevchenko
 spec:
+	type: LoadBalancer
   selector:
     project: cbm
   ports:
   - name: app-listener
     protocol: TCP
-    port: 80
-    targetPort: 80
-  type: LoadBalancer
+    port: 8888
+    targetPort: 8080
