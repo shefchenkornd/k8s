@@ -5,13 +5,14 @@ metadata:
   labels:
     app: my-k8s-deployments
 spec:
+  replicas: 3
   selector:
     matchLabels:
-      project: cbm
+      app: cbm
   template:
     metadata:
       labels:
-        project: cbm
+        app: cbm
     spec:
       containers:
       - name: app
