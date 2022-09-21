@@ -5,7 +5,6 @@ metadata:
   labels:
     app: my-k8s-deployments
 spec:
-  replicas: 3
   selector:
     matchLabels:
       project: cbm
