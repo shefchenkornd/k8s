@@ -31,7 +31,7 @@ metadata:
 spec:
 	type: LoadBalancer
   selector:
-    project: cbm
+    app: cbm
   ports:
   - name: app-listener
     protocol: TCP
