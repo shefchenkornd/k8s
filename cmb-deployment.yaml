@@ -29,7 +29,7 @@ metadata:
     env: prod
     owner: IlyaShevchenko
 spec:
-	type: LoadBalancer
+  type: LoadBalancer
   selector:
     app: cbm
   ports:
